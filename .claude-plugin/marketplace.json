@@ -5,17 +5,17 @@
   },
   "metadata": {
     "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
-    "version": "0.3.0"
+    "version": "0.4.0"
   },
   "plugins": [
     {
       "name": "git-tools",
       "source": "./plugins/git-tools",
-      "description": "Git workflow skills. Starts with a conventional-commit skill that drafts a message, waits for approval, then commits.",
+      "description": "Git workflow skills: a conventional-commit skill (draft, approve, commit) and a GitHub PR skill (build a PR from your commits and open it with gh).",
       "author": {
         "name": "Micke Berg"
       },
-      "keywords": ["git", "commit", "conventional-commits"]
+      "keywords": ["git", "commit", "pull-request", "conventional-commits"]
     },
     {
       "name": "guardrails",
