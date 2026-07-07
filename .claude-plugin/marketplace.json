@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
-    "version": "0.1.0"
+    "version": "0.2.0"
   },
   "plugins": [
     {
@@ -16,6 +16,15 @@
         "name": "Micke Berg"
       },
       "keywords": ["git", "commit", "conventional-commits"]
+    },
+    {
+      "name": "guardrails",
+      "source": "./plugins/guardrails",
+      "description": "A verify skill that runs your project's own checks (lint, typecheck, test, build) and reports honestly, plus an optional off-by-default pre-push gate hook.",
+      "author": {
+        "name": "Micke Berg"
+      },
+      "keywords": ["verify", "quality", "ci", "guardrails"]
     }
   ]
 }

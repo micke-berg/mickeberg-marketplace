@@ -1,0 +1,10 @@
+{
+  "name": "guardrails",
+  "description": "Enforced quality checks for Claude Code. A verify skill that runs your project's own checks (lint, typecheck, test, build) and reports honestly, plus an optional, off-by-default pre-push gate hook.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Micke Berg"
+  },
+  "license": "MIT",
+  "keywords": ["verify", "quality", "ci", "guardrails", "git-hooks"]
+}

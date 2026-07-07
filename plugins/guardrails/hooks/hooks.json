@@ -1,0 +1,17 @@
+{
+  "description": "Optional, OFF-BY-DEFAULT pre-push gate. Blocks `git push` only in repos that opted in by creating .guardrails/gate-on, and only until /guardrails:verify has passed. Without that opt-in file it is a no-op. Requires bash (native on macOS/Linux, Git Bash on Windows) and node.",
+  "hooks": {
+    "PreToolUse": [
+      {
+        "matcher": "Bash|PowerShell",
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/verify-gate.sh\"",
+            "timeout": 10
+          }
+        ]
+      }
+    ]
+  }
+}
