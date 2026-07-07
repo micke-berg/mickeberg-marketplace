@@ -1,0 +1,10 @@
+{
+  "name": "recap",
+  "description": "Summaries from your git history. Starts with a standup skill that turns your recent commits into a glanceable, spoken-style standup cheat sheet.",
+  "version": "0.1.0",
+  "author": {
+    "name": "Micke Berg"
+  },
+  "license": "MIT",
+  "keywords": ["standup", "git", "summary", "recap", "daily"]
+}

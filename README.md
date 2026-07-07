@@ -13,7 +13,11 @@ A small, personal [Claude Code](https://code.claude.com/docs) plugin marketplace
 - **`verify`** — before you call a change done, it runs your project's own checks (lint, typecheck, test, build) detected from `package.json`, loops on fixable failures, and reports **honestly**: a check that did not run is reported as "not run", never as passed.
 - **Optional pre-push gate (off by default)** — a bundled hook that can block `git push` until `verify` has passed. It does nothing until you opt in per-repo. See [The optional pre-push gate](#the-optional-pre-push-gate).
 
-Every team-specific choice in each skill (issue-key prefix, scope naming, which check layers to run, the commands) lives in a single **Customize** block at the top of the skill, so you adapt it by editing one place instead of hunting through the text.
+**`recap`** — summaries from your git history.
+
+- **`standup`** — turns your recent commits (across one repo or several) into a short, glanceable, spoken-style standup cheat sheet, so you don't blank when it's your turn. Git-only by default; paste ticket context if you want it woven in.
+
+Every team-specific choice in each skill (issue-key prefix, scope naming, which check layers to run, which repos to scan) lives in a single **Customize** block at the top of the skill, so you adapt it by editing one place instead of hunting through the text.
 
 ## Install
 
@@ -25,6 +29,7 @@ From a clone of this repo:
 /plugin marketplace add ./mickeberg-marketplace
 /plugin install git-tools@mickeberg
 /plugin install guardrails@mickeberg
+/plugin install recap@mickeberg
 /reload-plugins
 ```
 
@@ -36,6 +41,7 @@ From a clone of this repo:
 /plugin marketplace add micke-berg/mickeberg-marketplace
 /plugin install git-tools@mickeberg
 /plugin install guardrails@mickeberg
+/plugin install recap@mickeberg
 /reload-plugins
 ```
 
@@ -44,9 +50,10 @@ From a clone of this repo:
 ```text
 /git-tools:commit     # stage changes first, then draft + commit
 /guardrails:verify    # run the project's checks and report honestly
+/recap:standup        # summarize your recent git work for standup
 ```
 
-The skills also trigger from natural phrasing like "commit this" or "verify before I push".
+The skills also trigger from natural phrasing like "commit this", "verify before I push", or "what did I do yesterday".
 
 ## The optional pre-push gate
 

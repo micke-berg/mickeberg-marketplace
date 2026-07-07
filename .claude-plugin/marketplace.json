@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
-    "version": "0.2.0"
+    "version": "0.3.0"
   },
   "plugins": [
     {
@@ -25,6 +25,15 @@
         "name": "Micke Berg"
       },
       "keywords": ["verify", "quality", "ci", "guardrails"]
+    },
+    {
+      "name": "recap",
+      "source": "./plugins/recap",
+      "description": "Summaries from your git history. Starts with a standup skill that turns your recent commits into a glanceable, spoken-style standup cheat sheet.",
+      "author": {
+        "name": "Micke Berg"
+      },
+      "keywords": ["standup", "git", "summary", "recap"]
     }
   ]
 }
