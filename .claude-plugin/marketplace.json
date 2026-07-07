@@ -1,0 +1,21 @@
+{
+  "name": "mickeberg",
+  "owner": {
+    "name": "Micke Berg"
+  },
+  "metadata": {
+    "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
+    "version": "0.1.0"
+  },
+  "plugins": [
+    {
+      "name": "git-tools",
+      "source": "./plugins/git-tools",
+      "description": "Git workflow skills. Starts with a conventional-commit skill that drafts a message, waits for approval, then commits.",
+      "author": {
+        "name": "Micke Berg"
+      },
+      "keywords": ["git", "commit", "conventional-commits"]
+    }
+  ]
+}
