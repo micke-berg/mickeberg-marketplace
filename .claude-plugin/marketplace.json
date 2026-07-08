@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
-    "version": "0.4.0"
+    "version": "0.5.0"
   },
   "plugins": [
     {
@@ -34,6 +34,15 @@
         "name": "Micke Berg"
       },
       "keywords": ["standup", "git", "summary", "recap"]
+    },
+    {
+      "name": "humanizer",
+      "source": "./plugins/humanizer",
+      "description": "Removes signs of AI-generated writing from text: em dash overuse, rule of three, inflated symbolism, vague attributions, AI vocabulary, and more. Based on Wikipedia's \"Signs of AI writing\" guide.",
+      "author": {
+        "name": "Micke Berg"
+      },
+      "keywords": ["writing", "editing", "humanize", "ai-detection", "prose"]
     }
   ]
 }

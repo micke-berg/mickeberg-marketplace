@@ -17,6 +17,10 @@ A small, personal [Claude Code](https://code.claude.com/docs) plugin marketplace
 
 - **`standup`** — turns your recent commits (across one repo or several) into a short, glanceable, spoken-style standup cheat sheet, so you don't blank when it's your turn. Git-only by default; paste ticket context if you want it woven in.
 
+**`humanizer`** — cleans AI tells out of writing.
+
+- **`humanizer`** — reviews or edits text and removes signs of AI-generated writing: em dash overuse, rule of three, inflated symbolism, vague attributions, AI vocabulary, and more. Based on Wikipedia's "Signs of AI writing" guide. Packaged from [blader/humanizer](https://github.com/blader/humanizer).
+
 Every team-specific choice in each skill (issue-key prefix, scope naming, which check layers to run, which repos to scan) lives in a single **Customize** block at the top of the skill, so you adapt it by editing one place instead of hunting through the text.
 
 ## Install
@@ -30,6 +34,7 @@ From a clone of this repo:
 /plugin install git-tools@mickeberg
 /plugin install guardrails@mickeberg
 /plugin install recap@mickeberg
+/plugin install humanizer@mickeberg
 /reload-plugins
 ```
 
@@ -42,15 +47,17 @@ From a clone of this repo:
 /plugin install git-tools@mickeberg
 /plugin install guardrails@mickeberg
 /plugin install recap@mickeberg
+/plugin install humanizer@mickeberg
 /reload-plugins
 ```
 
 ### Use it
 
 ```text
-/git-tools:commit     # stage changes first, then draft + commit
-/guardrails:verify    # run the project's checks and report honestly
-/recap:standup        # summarize your recent git work for standup
+/git-tools:commit       # stage changes first, then draft + commit
+/guardrails:verify      # run the project's checks and report honestly
+/recap:standup          # summarize your recent git work for standup
+/humanizer:humanizer    # strip AI tells out of a piece of text
 ```
 
 The skills also trigger from natural phrasing like "commit this", "verify before I push", or "what did I do yesterday".
