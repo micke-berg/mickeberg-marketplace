@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
-    "version": "0.5.6"
+    "version": "0.6.0"
   },
   "plugins": [
     {
@@ -34,6 +34,15 @@
         "name": "Micke Berg"
       },
       "keywords": ["standup", "git", "summary", "recap"]
+    },
+    {
+      "name": "setup-kit",
+      "source": "./plugins/setup-kit",
+      "description": "The delivery toolkit for a professional Claude Code setup: setup-audit (inventory a machine vs a target state), install (idempotent installer, verified by re-running the audit), init-team (interview a repo into a tailored CLAUDE.md + permissions baseline), and team-baseline (grade a repo against a professional baseline). Ships CLAUDE.md templates, a settings baseline, and a delivery runbook.",
+      "author": {
+        "name": "Micke Berg"
+      },
+      "keywords": ["setup", "onboarding", "audit", "baseline", "claude-md", "install"]
     },
     {
       "name": "humanizer",

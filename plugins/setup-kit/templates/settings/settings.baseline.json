@@ -1,0 +1,18 @@
+{
+  "attribution": {
+    "commit": "",
+    "pr": ""
+  },
+  "permissions": {
+    "defaultMode": "default",
+    "deny": [
+      "Bash(rm -rf:*)"
+    ]
+  },
+  "enabledPlugins": {
+    "git-tools@mickeberg": true,
+    "guardrails@mickeberg": true,
+    "recap@mickeberg": true,
+    "setup-kit@mickeberg": true
+  }
+}
