@@ -28,7 +28,11 @@ Run `setup-audit` first (or read its recent report) so you act only on real gaps
 4. **Global config (D).** Ensure `~/.claude/settings.json` exists and carries the baseline from `templates/settings/settings.baseline.json`:
    - Fresh machine (`WRITE`): copy the baseline.
    - Existing machine (`MERGE`): read the current file, add only missing baseline keys (`permissions.defaultMode`, `attribution`, `statusLine`, `hooks.Notification`, `enabledPlugins` entries), and **preserve everything already there**. Never drop the client's existing keys, and never write secrets or personal paths.
-5. **Marketplace and plugins (E).** Register the kit marketplace if absent (`/plugin marketplace add <kit repo>`), then update the cache so it is current (`/plugin marketplace update <name>`), then enable each plugin in the set, both the `enabledPlugins: true` entry and, where run interactively, `/plugin install <name>@<marketplace>`. A reload or restart applies it.
+5. **Marketplace and plugins (E).** Register the kit marketplace if absent, update the cache so it is current, then enable each plugin in the set. Run it the way the session allows:
+   - **Interactive:** `/plugin marketplace add <kit repo>`, `/plugin marketplace update <name>`, `/plugin install <name>@<marketplace>`.
+   - **Non-interactive (an operator script, a headless `claude -p` run, or an agent):** the same three as CLI commands, `claude plugin marketplace add <kit repo>`, `claude plugin marketplace update <name>`, `claude plugin install <name>@<marketplace>`.
+
+   Setting `"<name>@<marketplace>": true` in `enabledPlugins` turns a plugin on for the next session, but on its own it does not register the plugin with the CLI, so also run `claude plugin install` (or the slash form) to make it authoritative. A reload or restart applies it. Confirm with `claude plugin list` and `claude plugin details <name>@<marketplace>`, which lists the plugin's skills.
 6. **Hooks (F), per the Hooks setting.**
    - **git-guardrails**: copy `assets/hooks/git-guardrails.sh` from this plugin to `~/.claude/hooks/git-guardrails.sh`, make it executable, and merge the `PreToolUse` entry into settings (matcher `Bash|PowerShell`). It needs `jq` to arm (step 3). It fails open, so a machine without `jq` is safe but unprotected. Say so.
    - **notify**: write the `Notification` hook using the snippet matching the detected OS (macOS `osascript`, Linux `notify-send`, Windows PowerShell). One line, no personal content.

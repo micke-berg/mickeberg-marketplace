@@ -1,7 +1,7 @@
 {
   "name": "setup-kit",
   "description": "The delivery toolkit for a professional Claude Code setup. Audit a machine, install the setup idempotently (verified by re-running the audit), onboard a repo with a tailored CLAUDE.md and permissions baseline, and grade a repo against a professional baseline. Cross-platform, no company specifics.",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "author": {
     "name": "Micke Berg"
   },

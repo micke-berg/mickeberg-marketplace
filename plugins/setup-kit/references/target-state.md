@@ -69,7 +69,7 @@ Never write secrets, tokens, or personal paths into a shipped settings file. `ad
 | `setup-kit` | RECOMMENDED | enabled, this kit's own skills, so `setup-audit` stays available on the client machine |
 | Official plugins (playwright, etc.) | OPTIONAL | only what the client's stack needs |
 
-Enabling a plugin is two parts: the marketplace must be present in the plugin cache (add or update it) **and** the plugin set to `true` in `enabledPlugins`. A reload (or restart) applies the change.
+Enabling a plugin is two parts: the marketplace must be present in the plugin cache (add or update it) **and** the plugin set to `true` in `enabledPlugins`. A reload (or restart) applies the change. Interactive sessions use the `/plugin ...` slash commands. Non-interactive delivery (a headless run, a script, an agent) uses the matching CLI commands, `claude plugin marketplace add|update` and `claude plugin install`, and can verify with `claude plugin list` and `claude plugin details`.
 
 ## F. Hooks
 
