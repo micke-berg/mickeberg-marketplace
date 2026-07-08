@@ -1,7 +1,7 @@
 {
   "name": "humanizer",
   "description": "Removes signs of AI-generated writing from text (em dash overuse, rule of three, inflated symbolism, vague attributions, AI vocabulary, and more), then reshapes it to your voice via one editable Customize block. Based on Wikipedia's \"Signs of AI writing\" guide.",
-  "version": "0.4.0",
+  "version": "0.5.0",
   "author": {
     "name": "Micke Berg"
   },

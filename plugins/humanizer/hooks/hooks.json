@@ -1,0 +1,15 @@
+{
+  "description": "Injects the always-humanize-last rule at session start, so public-facing text is humanized automatically without editing CLAUDE.md by hand.",
+  "hooks": {
+    "SessionStart": [
+      {
+        "hooks": [
+          {
+            "type": "command",
+            "command": "bash \"${CLAUDE_PLUGIN_ROOT}/hooks/humanize-rule.sh\""
+          }
+        ]
+      }
+    ]
+  }
+}

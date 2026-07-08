@@ -38,16 +38,18 @@ This is more than a generic AI-tell remover. The skill has a `## Customize` bloc
 
 Whatever the voice, the AI-tell removal runs **last**, as the final gate before the text is shown. It never overwrites a voice you already set; it only takes the tells out. That means you can layer it after any other voice-shaping step and trust it to clean up without flattening the tone.
 
-## Ambient opt-in (make it apply to ad-hoc text)
+## Always-on, automatically (the SessionStart hook)
 
-Chaining (the other skills calling this one) covers the text those skills produce. For **ad-hoc** public-facing text you write outside a skill (a one-off Slack or Teams message, a quick email, a comment), add a standing instruction to your `CLAUDE.md` so it gets the same pass:
+Chaining (the other skills calling this one) covers the text those skills produce. For **ad-hoc** public-facing text you write outside a skill (a one-off Slack or Teams message, a quick email, a comment), this plugin turns on a standing rule for you: it ships a `SessionStart` hook (`hooks/humanize-rule.sh`) that injects the instruction "humanize any public-facing text as the last step" into every session automatically. Installing the plugin is the whole setup. No `CLAUDE.md` edit.
+
+Honesty about how strong this is: the hook injects an *instruction*, the model does the rewrite, so it is a soft always-on rule (the same mechanism as Claude Code's built-in output-style modes), not a hard gate. The hard guarantee is inside the skills that chain the humanizer explicitly. Internal-only text (commit messages, code, private notes) is exempt by the rule's own wording.
+
+If you would rather not run the hook, or you use the chaining skills without installing this plugin, the equivalent manual line in your `CLAUDE.md` does the same job:
 
 ```markdown
 ## Writing
 Before finalizing any public-facing text (anything shared with or read by other people), run it through the humanizer skill as the last step. Internal-only text (commit messages, code, private notes) is exempt.
 ```
-
-This is a personal config line, not something a plugin can install for you, so it lives here as an opt-in. Scope it however you like; the example above matches the public-vs-internal split the skill already uses.
 
 ## Overview
 
