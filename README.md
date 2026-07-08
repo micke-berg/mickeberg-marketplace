@@ -88,6 +88,20 @@ Requirements: `bash` (native on macOS/Linux, Git Bash on Windows) and `node`, bo
 - **Versioning:** each plugin's version is set in its own `plugins/<name>/.claude-plugin/plugin.json`. Bump it on every release, or remove the `version` field to have Claude Code track the git commit instead. Do not set the version in both `plugin.json` and the marketplace entry.
 - **Add a plugin:** create `plugins/<name>/.claude-plugin/plugin.json` plus a `skills/` folder (and `hooks/hooks.json` if it bundles hooks), then add an entry to `.claude-plugin/marketplace.json` pointing at `./plugins/<name>`.
 
+### Vendored plugins
+
+Most plugins here are mine. `humanizer` is not — it is a copied snapshot of [blader/humanizer](https://github.com/blader/humanizer), packaged so it installs the same way as everything else. A few consequences worth knowing:
+
+- **It is pinned, not tracked.** The copy in `plugins/humanizer/skills/humanizer/` reflects upstream commit `c78047b` (2026-01-22). Upstream changes do not reach here until someone re-copies.
+- **Refresh it like this** when upstream has something worth pulling in:
+  ```text
+  git -C /path/to/humanizer pull                       # or clone it fresh
+  cp SKILL.md README.md  plugins/humanizer/skills/humanizer/
+  # bump version in plugins/humanizer/.claude-plugin/plugin.json
+  # update the pinned commit above, then validate + commit
+  ```
+- **Credit stays with the author.** The upstream repo is linked in the plugin's `homepage` field and here. I do not claim it as mine, and it is not covered by this repo's MIT license — check the upstream license before doing anything beyond personal use.
+
 ## License
 
-MIT. See [LICENSE](LICENSE).
+MIT covers the marketplace scaffolding and my own plugins (`git-tools`, `guardrails`, `recap`). See [LICENSE](LICENSE). Vendored plugins keep their upstream authorship and license — see [Vendored plugins](#vendored-plugins).
