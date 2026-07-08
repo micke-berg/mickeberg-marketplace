@@ -22,13 +22,14 @@ Open a pull request on GitHub with a title and description built from the branch
 4. **Draft title + body.**
    - Title: `[<ticket> ]<summary>` — concise, from the branch and commits. Same human voice as a good commit message: say what it does, avoid "enhance / leverage / comprehensive".
    - Body: per the Description setting. If the repo has `.github/PULL_REQUEST_TEMPLATE.md`, fill that.
-5. **Show it and wait for approval.** Never open the PR before the user approves the title and body.
-6. **Open it** with gh:
+5. **Humanizer pass (if available).** A PR body is read by reviewers, so it is public-facing. If the body has prose (a summary or bullets, not just an issue link) and the `humanizer` skill is available in this session, run the body through it via the Skill tool before showing it, so it reads naturally. If the skill is not installed, skip this step silently. Nothing to humanize in a `LINK-ONLY` body.
+6. **Show it and wait for approval.** Never open the PR before the user approves the title and body.
+7. **Open it** with gh:
    ```bash
    gh pr create --base <base> --head <branch> --title "<title>" --body "<body>"
    ```
    Add `--draft` per the Draft setting.
-7. Report the PR URL.
+8. Report the PR URL.
 
 ## Rules
 
