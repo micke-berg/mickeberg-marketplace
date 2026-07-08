@@ -4,20 +4,12 @@ A Claude Code skill that removes signs of AI-generated writing from text, making
 
 ## Installation
 
-### Recommended (clone directly into Claude Code skills directory)
+This skill ships as a plugin in Micke Berg's personal marketplace:
 
-```bash
-mkdir -p ~/.claude/skills
-git clone https://github.com/blader/humanizer.git ~/.claude/skills/humanizer
-```
-
-### Manual install/update (only the skill file)
-
-If you already have this repo cloned (or you downloaded `SKILL.md`), copy the skill file into Claude Code’s skills directory:
-
-```bash
-mkdir -p ~/.claude/skills/humanizer
-cp SKILL.md ~/.claude/skills/humanizer/
+```text
+/plugin marketplace add micke-berg/mickeberg-marketplace
+/plugin install humanizer@mickeberg
+/reload-plugins
 ```
 
 ## Usage
@@ -35,6 +27,27 @@ Or ask Claude to humanize text directly:
 ```
 Please humanize this text: [your text]
 ```
+
+## Voice layer
+
+This is more than a generic AI-tell remover. The skill has a `## Customize` block that sets the voice, and a voice-precedence rule so it composes with a voice you have already applied:
+
+1. A voice you supply (in the arguments, or from a voice file / tuned Customize block / voice notes in your `CLAUDE.md` or memory) wins.
+2. Otherwise the voice already in the text is preserved.
+3. Otherwise the Customize block is the fallback (in this personal copy, Micke's voice).
+
+Whatever the voice, the AI-tell removal runs **last**, as the final gate before the text is shown. It never overwrites a voice you already set; it only takes the tells out. That means you can layer it after any other voice-shaping step and trust it to clean up without flattening the tone.
+
+## Ambient opt-in (make it apply to ad-hoc text)
+
+Chaining (the other skills calling this one) covers the text those skills produce. For **ad-hoc** public-facing text you write outside a skill (a one-off Slack or Teams message, a quick email, a comment), add a standing instruction to your `CLAUDE.md` so it gets the same pass:
+
+```markdown
+## Writing
+Before finalizing any public-facing text (anything shared with or read by other people), run it through the humanizer skill as the last step. Internal-only text (commit messages, code, private notes) is exempt.
+```
+
+This is a personal config line, not something a plugin can install for you, so it lives here as an opt-in. Scope it however you like; the example above matches the public-vs-internal split the skill already uses.
 
 ## Overview
 
