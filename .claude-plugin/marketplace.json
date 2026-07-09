@@ -5,7 +5,7 @@
   },
   "metadata": {
     "description": "Micke Berg's personal Claude Code plugins. Cross-platform, no company specifics.",
-    "version": "0.6.1"
+    "version": "0.6.2"
   },
   "plugins": [
     {
@@ -15,7 +15,12 @@
       "author": {
         "name": "Micke Berg"
       },
-      "keywords": ["git", "commit", "pull-request", "conventional-commits"]
+      "keywords": [
+        "git",
+        "commit",
+        "pull-request",
+        "conventional-commits"
+      ]
     },
     {
       "name": "guardrails",
@@ -24,7 +29,12 @@
       "author": {
         "name": "Micke Berg"
       },
-      "keywords": ["verify", "quality", "ci", "guardrails"]
+      "keywords": [
+        "verify",
+        "quality",
+        "ci",
+        "guardrails"
+      ]
     },
     {
       "name": "recap",
@@ -33,7 +43,12 @@
       "author": {
         "name": "Micke Berg"
       },
-      "keywords": ["standup", "git", "summary", "recap"]
+      "keywords": [
+        "standup",
+        "git",
+        "summary",
+        "recap"
+      ]
     },
     {
       "name": "setup-kit",
@@ -42,7 +57,14 @@
       "author": {
         "name": "Micke Berg"
       },
-      "keywords": ["setup", "onboarding", "audit", "baseline", "claude-md", "install"]
+      "keywords": [
+        "setup",
+        "onboarding",
+        "audit",
+        "baseline",
+        "claude-md",
+        "install"
+      ]
     },
     {
       "name": "humanizer",
@@ -51,7 +73,30 @@
       "author": {
         "name": "Micke Berg"
       },
-      "keywords": ["writing", "editing", "humanize", "ai-detection", "prose"]
+      "keywords": [
+        "writing",
+        "editing",
+        "humanize",
+        "ai-detection",
+        "prose"
+      ]
+    },
+    {
+      "name": "xquik-x-data",
+      "source": "./plugins/xquik-x-data",
+      "description": "Guides Xquik REST API and remote MCP workflows for X data, exports, monitoring, and webhooks.",
+      "author": {
+        "name": "Xquik",
+        "url": "https://github.com/Xquik-dev/x-twitter-scraper"
+      },
+      "keywords": [
+        "xquik",
+        "x-data",
+        "mcp",
+        "api",
+        "webhooks",
+        "monitoring"
+      ]
     }
   ]
 }
